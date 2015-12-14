@@ -50,7 +50,7 @@ function loadData() {
 	
 	//WikiPedia AJAX Request
 	
-	var wikiURL = 'http://envy.wikipedia.org/w/api.php?action=opensearch&search='
+	var wikiURL = 'http://en.wikipedia.org/w/api.php?action=opensearch&search='
 	+ cityInfo + '&format=json&callback=wikiCallback';
 	
 	var wikiTimeout = setTimeout(function(){
