@@ -14,7 +14,7 @@ function loadData() {
 	
 	$greeting.text("So, you want to live at " + address + "?")
 	
-	var streetViewURL = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address + '';
+	var streetViewURL = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address + '';
 	$body.append('<img class="bgimg" src="' + streetViewURL + '">')
 
     // clear out old data before new request
@@ -25,7 +25,7 @@ function loadData() {
 	
 	//NewYorkTimes AJAX Request
 	
-	var nytURL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityInfo + '&sort=newest&api-key=e3b29ee6890e39977d33529ea6eaff6e:12:73463344'
+	var nytURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityInfo + '&sort=newest&api-key=e3b29ee6890e39977d33529ea6eaff6e:12:73463344'
 	
 	$.getJSON(nytURL, function(data) {
 		console.log(data);
@@ -43,14 +43,15 @@ function loadData() {
 		
 		
 		
-	}).error(function() {
+	})
+	.error(function() {
 		$nytHeaderElem.text('New York Times Could Not Be Loaded');
 	})
 	
 	
 	//WikiPedia AJAX Request
 	
-	var wikiURL = 'http://en.wikipedia.org/w/api.php?action=opensearch&search='
+	var wikiURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='
 	+ cityInfo + '&format=json&callback=wikiCallback';
 	
 	var wikiTimeout = setTimeout(function(){
